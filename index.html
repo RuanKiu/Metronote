@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="#" />
+    <meta description="Web-based, powerful, and stylish. The Metronote online metronome is a free web application that provides access to a metronome anywhere in the world."
+
+</head>
+<body>
+    <main>
+        <div class="app">
+            <div id="metronome-count">
+                <h1 class="beats-per-min">--</h1>
+                
+            </div>
+            <div class="adjustments">
+                <div class="division">
+                    <p class="division-class">Quarter</p>
+                </div>
+                <div class="beat-type">
+                    <div>
+                        <p class="beat-name">Ping</p>
+                        <audio class='audio' src="./sounds/ping.mp3">
+                        <audio class='audio' src="./sounds/beat.mp3">
+                        <audio class='audio' src="./sounds/drop.mp3">
+                        <audio class='audio' src="./sounds/bop.mp3">
+                        <audio class='audio' src="./sounds/flick.mp3">
+                        <audio class='audio' src="./sounds/pop.mp3">
+                        </audio>
+                    </div>
+                </div>
+                <div class="speed">
+                    <input style="border:none" type="number" id="speedInput" min="10" max="300" placeholder="Enter Tempo:" >
+                </div>
+                <div class="pauseButton">
+                    <p class="pause">
+                        Play
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <p>
+            Copyright 2020 &copy; RuanKiu
+        </p>
+    </footer>
+    <script src="background.js"></script>
+</body>
+</html>
