@@ -222,7 +222,7 @@ input[type=number] {
 }
 @keyframes pulsebg {
     0% {
-        background-color:#003b46;
+        background: #003b46;
     }
     50% {
         background-color: #2a586f;
