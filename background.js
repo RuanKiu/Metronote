@@ -22,12 +22,18 @@ var currentSound = 0.2
 beats[initalBeat].volume = 0.2
 var tripletCount = 1
 var STCount = 1
-var pauseNum = -1
+var pauseNum = 0
 //actions
 speedInput.addEventListener('input', gatherInput);
 changeSound.addEventListener('click', numSwich);
 noteTypeButton.addEventListener('click', factorSwitch);
 pauseButton.addEventListener('click', isPlaying);
+window.addEventListener('keyup', function() {
+    if (event.which == 32) {
+        isPlaying();
+    }
+    
+})
 //functions
 function numSwich() {
     initalBeat += 1
@@ -59,6 +65,7 @@ function playBeat() {
     beats[initalBeat].volume = currentSound
     beats[initalBeat].play()
     accentSwitch();
+    pauseButton.classList.remove('clear')
 };
 function factorSwitch() {
     factor += 1
@@ -137,19 +144,12 @@ function gatherInput() {
 }
 function isPlaying() {
     pauseNum += 1
-    if (pauseNum == 0) {
-        var BPM = 60/(defaultTempo) * 1000
-        interval = setInterval(playBeat, BPM / factor)
-        //adding in the BMP count view
-        beatsPerMin.innerHTML = defaultTempo + ' BPM'
-        pausePlay.innerHTML = 'Playing'
-    }
     if (pauseNum == 3) {
         pauseNum = 1
     }
     if (pauseNum == 1) {
         clearInterval(interval)
-        pausePlay.innerHTML = 'Paused'
+        pausePlay.innerText = 'Paused'
     }
     if (pauseNum == 2) {
         var BPM = 60/(defaultTempo) * 1000

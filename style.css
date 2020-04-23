@@ -10,6 +10,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background:  #002133;
+    animation: pulsebg 15s infinite;
 }
 main {
     width: 100vw;
@@ -24,7 +26,7 @@ main {
     justify-content: space-around;
 }
 #metronome-count {
-    background: lightcoral;
+    background: #66a5ad;
     width: 60vw;
     height: 70vw;
     margin: auto;
@@ -40,8 +42,10 @@ main {
     cursor: pointer;
 }
 #metronome-count:hover {
-    background-color: rgb(256, 150, 120);
-    transition: 0.5s;  
+    background-color: #c4dfe6;
+    transform: translate(-20px, -20px);
+    box-shadow: 20px 20px 15px;
+    transition: 0.7s;  
 }
 #metronome-count:active {
     animation: pusle 0.5s;
@@ -53,11 +57,12 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: 1s;
 }
 .adjustments > div {
     width: 20vh;
     height: 20vh;
-    background-color: lightcoral;
+    background-color: #66a5ad;
     border-radius: 20%;
     transition: 1s;
     font-size: 4vh;
@@ -69,10 +74,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    transition: 1s;
    
 }
 .adjustments > div:hover {
-    background-color: rgb(256, 150, 120);
+    background-color: #c4dfe6;
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 15px;
     transition: 0.5s; 
 } 
 .adjustments > div:active {
@@ -82,7 +90,7 @@ input[type=number] {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: lightcoral;
+    background-color: #66a5ad;
     font-size: 3.5vh;
     border-radius: 19%;
     border: none;
@@ -97,7 +105,7 @@ input[type=number] {
     animation: flash 1s;
 }
 input:hover {
-    background-color: rgb(256, 150, 120);
+    background-color: #c4dfe6;
     transition: 0.5s;
 }
 input:focus {
@@ -114,12 +122,23 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+    box-shadow: 10px 10px 15px;
 }
 ::-webkit-input-placeholder {
     color: black;
 }
-
-@media only screen and (max-width: 700px) {
+::-webkit-input-placeholder:hover{
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 15px;
+}
+.clear {
+    display: none;
+    width: 0;
+    height: 0;
+    padding: 0%;
+    margin: 0%;
+}
+@media only screen and (max-width: 850px) {
     .metronome-count {
         width: 50vw;
         height: 50vw;
@@ -127,7 +146,7 @@ input[type=number] {
     .adjustments > div {
         width: 20vh;
         height: 20vh;
-        background-color: lightcoral;
+        background-color: #66a5ad;
         border-radius: 20%;
         transition: 1s;
         font-size: 3vh;
@@ -139,7 +158,7 @@ input[type=number] {
         width: 100%;
         height: 100%;
         border: none;
-        background-color: lightcoral;
+        background-color: #66a5ad;
         font-size: 2vh;
         border-radius: 19%;
         border: none;
@@ -151,16 +170,35 @@ input[type=number] {
         text-align: center;
     }
 }
-.footer {
+.footer-div {
     position: absolute;
     bottom: 0px;
     display: flex;
-    width: 90%;
-    margin: auto;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    cursor: default;
+    opacity: 0.5;
+    transition: 1s;
 }
-.footer p{
+.footer-div:hover {
+    opacity: 1;
+}
+.footer-div p{
+    flex: 1;
     text-align: center;
-    width: 20%;
+}
+.footer-div li{
+    list-style: none;
+}
+.nav-bar {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-div a {
+    text-decoration: none;
+    color: black;
 }
 @keyframes fade-in {
     0% {
@@ -170,15 +208,27 @@ input[type=number] {
         opacity: 100%;
     }
 }
+
 @keyframes pulse {
     0% {
-        background-color: rgb(256, 150, 120);
+        background-color: #c4dfe6;
     }
     50% {
-        background-color: lightcoral;
+        background-color: #66a5ad;
     }
     100% {
-        background-color: rgb(256, 150, 120);
+        background-color: #c4dfe6;
+    }
+}
+@keyframes pulsebg {
+    0% {
+        background-color:#003b46;
+    }
+    50% {
+        background-color: #2a586f;
+    }
+    100% {
+        background-color: #003b46;
     }
 }
 @keyframes pulse-opacity {
@@ -194,9 +244,9 @@ input[type=number] {
 }
 @keyframes flash {
     0% {
-        background: rgb(256, 150, 120);
+        background: #c4dfe6;
     }
     100% {
-        background: lightcoral;
+        background: #66a5ad;
     }
 }
