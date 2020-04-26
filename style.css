@@ -3,15 +3,14 @@
     padding: 0px;
     box-sizing: border-box;
     animation: fade-in 1s;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Raleway', sans-serif;
 }
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background:  #002133;
-    animation: pulsebg 15s infinite;
+    background:  black;
 }
 main {
     width: 100vw;
@@ -20,73 +19,77 @@ main {
 }
 .app {
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 #metronome-count {
-    background: #66a5ad;
-    width: 60vw;
-    height: 70vw;
+    background: black;
+    width: 50vw;
+    height: 50vw;
+    max-width: 50vh;
+    max-height: 50wv;
     margin: auto;
     margin-top: 5vh;
     margin-bottom: 7vh;
     display: flex;
-    font-size: 5vh;
+    font-size: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: black;
-    border-radius: 5%;
+    color: white;
+    border-radius: 50%;
     transition: 1s;
-    box-shadow: black 10px 10px 20px;
+    border-width: 0.5vh;
+    border-style: solid;
+    border-color: white;
     cursor: pointer;
 }
 #metronome-count:hover {
-    background-color: #c4dfe6;
+    background-color: white;
     color: black;
-    transform: translate(-20px, -20px);
-    box-shadow: black 30px 30px 40px;
     transition: 0.7s;  
 }
 #metronome-count:active {
     animation: pusle 0.5s;
 }
 .adjustments {
-    width: 80%;
+    width: 100%;
     height: 30%;
-    margin: 2% auto 2% auto;
+    margin: 5% auto 2% auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
     transition: 1s;
 }
 .adjustments > div {
-    width: 20vh;
+    width: 20vw;
     height: 20vh;
-    background-color: #66a5ad;
-    border-radius: 20%;
+    max-width: 20vh;
+    background: black;
+    border-radius: 0%;
     transition: 0.5s;
     font-size: 4vh;
-    margin: auto 2vw auto 2vw;
+    margin: auto 3vw auto 3vw;
     font-weight: bolder;
+    border-width: 0.5vh;
+    border-style: solid;
+    border-color: white;
     cursor: pointer;
-    color: black;
-    box-shadow: black 10px 10px 15px;
+    color: white;
 }
 .beat-type, .division, .signature, .pauseButton {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background: black;
     transition: 0.5s;
    
 }
 .adjustments > div:hover {
-    background-color: #c4dfe6;
+    background-color: white;
     color: black;
-    transform: translate(-10px, -10px);
-    box-shadow: black 20px 20px 25px;
     transition: 0.5s; 
 } 
 .adjustments > div:active {
@@ -96,22 +99,23 @@ input[type=number] {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: #66a5ad;
-    font-size: 3.5vh;
-    border-radius: 19%;
+    background-color: black;
+    font-size: 2.8vh;
     border: none;
     outline: none;
     color: transparent;
-    text-shadow: black 0px 0px 1px ;
+    text-shadow: white 0px 0px 1px ;
     cursor: pointer;
     transition: 1s;
     text-align: center;
+    border-radius: 0%;
+
 }
 .flash {
     animation: flash 1s;
 }
 input:hover {
-    background-color: #c4dfe6;
+    background-color: white;
     transition: 0.5s;
     text-shadow: black 0px 0px 1px;
 
@@ -131,14 +135,15 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
-    box-shadow: 10px 10px 15px;
 }
 ::-webkit-input-placeholder {
-    color: rgb(0, 0, 0);
+    color: white;
+
 }
 ::-webkit-input-placeholder:hover{
-    transform: translate(-10px, -10px);
     color: black;
+
+    
 }
 .clear {
     display: none;
@@ -148,15 +153,11 @@ input[type=number] {
     margin: 0%;
 }
 @media only screen and (max-width: 850px) {
-    .metronome-count {
-        width: 50vw;
-        height: 50vw;
-    }
     .adjustments > div {
         width: 20vh;
         height: 20vh;
-        background-color: #66a5ad;
-        border-radius: 20%;
+        background-color: black;
+        border-radius: 0%;
         transition: 1s;
         font-size: 3vh;
         margin: auto 2vw auto 2vw;
@@ -167,13 +168,11 @@ input[type=number] {
         width: 100%;
         height: 100%;
         border: none;
-        background-color: #66a5ad;
         font-size: 2vh;
-        border-radius: 19%;
+        border-radius: 0%;
         border: none;
         outline: none;
         color: transparent;
-        text-shadow: 0px 0px 1px black;
         cursor: pointer;
         transition: 1s;
         text-align: center;
@@ -189,6 +188,7 @@ input[type=number] {
     cursor: default;
     opacity: 0.5;
     transition: 1s;
+    color: white;
 }
 .footer-div:hover {
     opacity: 1;
@@ -220,26 +220,17 @@ input[type=number] {
 
 @keyframes pulse {
     0% {
-        background-color: #c4dfe6;
+        background-color: black;
     }
     50% {
-        background-color: #66a5ad;
+        background-color: white;
+        
     }
     100% {
-        background-color: #c4dfe6;
+        background-color: black;
     }
 }
-@keyframes pulsebg {
-    0% {
-        background: #003b46;
-    }
-    50% {
-        background-color: #2a586f;
-    }
-    100% {
-        background-color: #003b46;
-    }
-}
+
 @keyframes pulse-opacity {
     0% {
         opacity: 100%;
