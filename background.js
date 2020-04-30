@@ -61,20 +61,22 @@ function numSwich() {
     
 }
 function playBeat() {
-    beats[initalBeat].currentTime = 0
-    beats[initalBeat].volume = currentSound
-    beats[initalBeat].play()
+    pausePlay.innerHTML = 'Playing'
+    pauseNum = 2;
+    beats[initalBeat].currentTime = 0;
+    beats[initalBeat].volume = currentSound;
+    beats[initalBeat].play();
     accentSwitch();
-    pauseButton.classList.remove('clear')
+    pauseButton.classList.remove('clear');
 };
 function factorSwitch() {
-    factor += 1
+    factor += 1;
     if (factor == 5) {
-        factor = 1
+        factor = 1;
     }
     else if (factor == 1) {
         noteType.innerHTML = 'Quarter'
-        accentNumber = 1
+        accentNumber = 1;
     }
     else if (factor == 2) {
         noteType.innerHTML = 'Eighth'
@@ -151,7 +153,8 @@ function isPlaying() {
         clearInterval(interval)
         pausePlay.innerText = 'Paused'
     }
-    if (pauseNum == 2) {
+    if (pauseNum == 2) {    
+        clearInterval(interval)
         var BPM = 60/(defaultTempo) * 1000
         interval = setInterval(playBeat, BPM / factor)
         //adding in the BMP count view
